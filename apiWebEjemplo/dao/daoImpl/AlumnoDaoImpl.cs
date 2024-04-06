@@ -77,13 +77,14 @@ namespace apiWebEjemplo.dao.daoImpl
                 sqlCommand.Parameters.Clear();
                 sqlCommand.CommandTimeout = 0;
                 sqlCommand.Parameters.AddWithValue("@indicador", indicador);
-                sqlCommand.Parameters.AddWithValue("@Codigo", indicador);
-                sqlCommand.Parameters.AddWithValue("@Nombre", indicador);
-                sqlCommand.Parameters.AddWithValue("@ApellidoPaterno", indicador);
-                sqlCommand.Parameters.AddWithValue("@ApellidoMaterno", indicador);
-                sqlCommand.Parameters.AddWithValue("@Genero", indicador);
-                sqlCommand.Parameters.AddWithValue("@Documento", indicador);
+                sqlCommand.Parameters.AddWithValue("@Codigo", objAlumno.Codigo);
+                sqlCommand.Parameters.AddWithValue("@Nombre", objAlumno.Nombre);
+                sqlCommand.Parameters.AddWithValue("@ApellidoPaterno", objAlumno.ApellidoPaterno);
+                sqlCommand.Parameters.AddWithValue("@ApellidoMaterno", objAlumno.ApellidoMaterno);
+                sqlCommand.Parameters.AddWithValue("@Genero", objAlumno.Genero);
+                sqlCommand.Parameters.AddWithValue("@Documento", objAlumno.Documento);
                 registrar = Convert.ToInt32(sqlCommand.ExecuteScalar());
+
             }
             catch (Exception ex)
             {

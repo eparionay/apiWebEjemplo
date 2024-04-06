@@ -8,8 +8,10 @@ namespace apiWebEjemplo.dao
 {
     public interface AlumnoDao
     {
+        // Insertar Eliminar Actualizar
         int operacionAlumno(string indicador, Alumno objAlumno);
 
+        // ListarTodosAlumnos, ObtenerAlumnoxI
         List<Alumno> listadoAlumno(string indicador, int codigo);
 
     }

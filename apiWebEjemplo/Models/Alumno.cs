@@ -13,7 +13,6 @@ namespace apiWebEjemplo.Models
         public string ApellidoMaterno { get; set; }
         public string Genero { get; set; }
         public string Documento { get; set; }
-
         public int Estado { get; set; }
 
     }
