@@ -34,19 +34,13 @@ namespace apiWebEjemplo.Controllers
             return lista;
         }
 
-
         // api alumno ingresarDatos
-        [Route("api/alumno/ingresarDatos")]
+        [Route("api/alumno/registrar")]
         [HttpPost]
-        public ResponseServer ingresarDatos(Alumno alumno)
+        public ResponseServer registrar(Alumno alumno)
         {
             ResponseServer rptaServidor = new ResponseServer();
-            LOG.Info("Nombre : " + alumno.Nombre);
-            LOG.Info("Apellido P : " + alumno.ApellidoPaterno);
-            LOG.Info("Apellido M : " + alumno.ApellidoMaterno);
-            LOG.Info("Documento : " + alumno.Documento);
             ServiceAlumno servicioAlumno = new ServiceAlumno();
-
             int procesar = servicioAlumno.operacionAlumno("registrar", alumno);
             if (procesar<1){
                 rptaServidor.mensaje = "Hubo un error.";
@@ -59,6 +53,8 @@ namespace apiWebEjemplo.Controllers
             }
             return rptaServidor;
         }
+
+
 
 
 
