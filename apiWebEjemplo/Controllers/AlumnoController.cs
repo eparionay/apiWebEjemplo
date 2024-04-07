@@ -34,7 +34,6 @@ namespace apiWebEjemplo.Controllers
             return lista;
         }
 
-        // api alumno ingresarDatos
         [Route("api/alumno/registrar")]
         [HttpPost]
         public ResponseServer registrar(Alumno alumno)
@@ -54,12 +53,24 @@ namespace apiWebEjemplo.Controllers
             return rptaServidor;
         }
 
-
-
-
-
-
-
-
+        [Route("api/alumno/actualizar")]
+        [HttpPut]
+        public ResponseServer actualizar(Alumno alumno)
+        {
+            ResponseServer rptaServidor =new ResponseServer();
+            ServiceAlumno servicioAlumno = new ServiceAlumno();
+            int actualizar = servicioAlumno.operacionAlumno("actualizar", alumno);
+            if (actualizar == 1)
+            {
+                rptaServidor.mensaje = "Se actualizo correctamente";
+                rptaServidor.codigo = 1;
+            }
+            else
+            {
+                rptaServidor.mensaje = "Hubo un error.";
+                rptaServidor.codigo = 0;
+            }
+            return rptaServidor;
+        }
     }
 }
