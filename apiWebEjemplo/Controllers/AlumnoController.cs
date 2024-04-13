@@ -34,6 +34,19 @@ namespace apiWebEjemplo.Controllers
             return lista;
         }
 
+
+        [Route("api/alumno/respuestaSW/{codigo}")]
+        [HttpGet]
+        public ResponseServer respuestaSW(int codigo)
+        {
+            ResponseServer rpta = new ResponseServer();
+            rpta.codigo = codigo;
+            rpta.mensaje = "Esto es un ejercicio de prueba";
+            return rpta;
+        }
+
+
+
         [Route("api/alumno/registrar")]
         [HttpPost]
         public ResponseServer registrar(Alumno alumno)
